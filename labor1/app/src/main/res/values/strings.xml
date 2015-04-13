@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="ok">Click me!</string>
     <string name="toast_text">Pew Pew !!</string>
+    <string name="dyn_btn_text">Ich wurde dynamisch erzeugt</string>
+    <string name="dyn_toast_text">Waddup, yo</string>
 </resources>

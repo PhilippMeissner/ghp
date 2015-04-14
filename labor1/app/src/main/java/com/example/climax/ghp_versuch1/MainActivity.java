@@ -17,24 +17,37 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
     private SharedPreferences prefs;
+    private EditText editText;
+
     Button btn_ok;
     private final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onStop() {
+        super.onStop();
         Log.d(TAG, "onStop wurde aufgerufen.");
 
-        EditText text = (EditText) findViewById(R.id.editText);
-        prefs = (SharedPreferences) text.getText();
+        editText = (EditText) findViewById(R.id.editText);
+
+        prefs = getPreferences(MODE_PRIVATE);
+
+
+        SharedPreferences.Editor editor = prefs.edit();
+        //---save the values in the EditText view to preferences---
+        editor.putString("test1", editText.getText().toString());
+        editor.commit();
     }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
+        editText = (EditText) findViewById(R.id.editText);
         btn_ok = (Button) findViewById(R.id.ok_btn);
+
 
         btn_ok.setOnClickListener(new Button.OnClickListener() {
 
@@ -92,10 +105,11 @@ public class MainActivity extends ActionBarActivity {
 
         curr_layout.addView(dyn_btn);
 
-        // Add prefs to editText
-        // TODO - NOT WORKING
-        EditText edit_field =  (EditText) findViewById(R.id.editText);
-        SharedPreferences.Editor editor = prefs.edit();
+        prefs = getPreferences(MODE_PRIVATE);
+
+        editText.setText(prefs.getString("test1", ""));
+
+
     }
 
 

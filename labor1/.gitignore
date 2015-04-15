@@ -1,6 +1,4 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
+# Ignore all files
+*
+# But the sources
+!app/src/*

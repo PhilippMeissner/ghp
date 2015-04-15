@@ -2,9 +2,12 @@
     <string name="app_name">GHP_Versuch1</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="second_activity_hello">Patrick ist ein kleiner Stinker.</string>
     <string name="action_settings">Settings</string>
     <string name="ok">Click me!</string>
     <string name="toast_text">Pew Pew !!</string>
     <string name="dyn_btn_text">Ich wurde dynamisch erzeugt</string>
     <string name="dyn_toast_text">Waddup, yo</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_display_message">DisplayMessage</string>
 </resources>

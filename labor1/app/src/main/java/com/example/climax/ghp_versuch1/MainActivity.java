@@ -1,6 +1,7 @@
 package com.example.climax.ghp_versuch1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -19,7 +20,8 @@ public class MainActivity extends ActionBarActivity {
     private SharedPreferences prefs;
     private EditText editText;
 
-    Button btn_ok;
+    Button btn_ok, intent_button;
+
     private final String TAG = MainActivity.class.getSimpleName();
 
     @Override
@@ -45,9 +47,10 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
 
+        // Get resources
         editText = (EditText) findViewById(R.id.editText);
         btn_ok = (Button) findViewById(R.id.ok_btn);
-
+        intent_button = (Button) findViewById(R.id.intent_button);
 
         btn_ok.setOnClickListener(new Button.OnClickListener() {
 
@@ -112,6 +115,13 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+
+    public void createIntent(View view) {
+        Log.d(TAG, "CreateIntent wurde aufgerufen.");
+        Intent intent = new Intent(this, DisplayMessage.class);
+        intent.putExtra("Bitch", "Hurensohn");
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

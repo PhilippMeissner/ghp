@@ -23,4 +23,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Panic Button"
+        android:id="@+id/intent_button"
+        android:onClick="createIntent"
+        android:layout_gravity="right" />
+
 </LinearLayout>
